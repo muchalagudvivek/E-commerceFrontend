@@ -5,10 +5,11 @@ import Offers from '../Components/Offers/Offers'
 import NewCollections from '../Components/NewCollections/NewCollections'
 import NewsLetter from '../Components/NewsLetter/NewsLetter'
 
-const Shop = () => {
+const Shop = () => { 
+  const [popular, newcollection] = useState([]);
 
-  const [popular, setPopular] = useState([]);
-  const [newcollection, setNewCollection] = useState([]);
+   /* const [popular, setPopular] = useState([]);
+    const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
     fetch('http://localhost:4000/popularinwomen') 
@@ -21,7 +22,7 @@ const Shop = () => {
 
     useEffect(() => {
       fetchInfo();
-    }, [])
+    }, [])*/
 
 
   return (

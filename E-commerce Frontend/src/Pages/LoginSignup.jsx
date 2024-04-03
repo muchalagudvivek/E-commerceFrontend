@@ -1,60 +1,59 @@
 import React, { useState } from "react";
-import "./CSS/LoginSignup.css";
-
+import "./CSS/LoginSignup.css"; 
 const LoginSignup = () => {
 
-  const [state,setState] = useState("Login");
-  const [formData,setFormData] = useState({username:"",email:"",password:""});
+    const [state,setState] = useState("Login");
+    const [formData,setFormData] = useState({username:"",email:"",password:""});
 
-  const changeHandler = (e) => {
-    setFormData({...formData,[e.target.name]:e.target.value});
+    const changeHandler = (e) => {
+      setFormData({...formData,[e.target.name]:e.target.value});
+      }
+
+    const login = async () => {
+     let dataObj;
+  //   await fetch('http://localhost:4000/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept:'application/form-data',
+  //       'Content-Type':'application/json',
+  //     },
+  //     body: JSON.stringify(formData),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((data) => {dataObj=data});
+  //     console.log(dataObj);
+  //     if (dataObj.success) {
+  //       localStorage.setItem('auth-token',dataObj.token);
+  //       window.location.replace("/");
+  //     }
+  //     else
+  //     {
+  //       alert(dataObj.errors)
+  //     } 
     }
 
-  const login = async () => {
-    let dataObj;
-    await fetch('http://localhost:4000/login', {
-      method: 'POST',
-      headers: {
-        Accept:'application/form-data',
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {dataObj=data});
-      console.log(dataObj);
-      if (dataObj.success) {
-        localStorage.setItem('auth-token',dataObj.token);
-        window.location.replace("/");
-      }
-      else
-      {
-        alert(dataObj.errors)
-      }
-  }
+    const signup = async () => {
+     let dataObj;
+  //   await fetch('http://localhost:4000/signup', {
+  //     method: 'POST',
+  //     headers: {
+  //       Accept:'application/form-data',
+  //       'Content-Type':'application/json',
+  //     },
+  //     body: JSON.stringify(formData),
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then((data) => {dataObj=data});
 
-  const signup = async () => {
-    let dataObj;
-    await fetch('http://localhost:4000/signup', {
-      method: 'POST',
-      headers: {
-        Accept:'application/form-data',
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {dataObj=data});
-
-      if (dataObj.success) {
-        localStorage.setItem('auth-token',dataObj.token);
-        window.location.replace("/");
-      }
-      else
-      {
-        alert(dataObj.errors)
-      }
-  }
+  //     if (dataObj.success) {
+  //       localStorage.setItem('auth-token',dataObj.token);
+  //       window.location.replace("/");
+  //     }
+  //     else
+  //     {
+  //       alert(dataObj.errors)
+  //     }
+    }
 
   return (
     <div className="loginsignup">

@@ -1,5 +1,5 @@
-import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+ import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import Cart from "./Pages/Cart";
 import Product from "./Pages/Product";
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop gender="all" />} />
@@ -28,7 +28,7 @@ function App() {
           <Route path="/login" element={<LoginSignup/>} />
         </Routes>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

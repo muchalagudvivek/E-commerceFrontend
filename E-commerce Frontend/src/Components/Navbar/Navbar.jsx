@@ -5,7 +5,7 @@ import logo from '../Assets/logo.png'
 import cart_icon from '../Assets/cart_icon.png'
 import { ShopContext } from '../../Context/ShopContext'
 import nav_dropdown from '../Assets/nav_dropdown.png'
-
+import profile_logo from '../Assets/profile_logo.png'
 const Navbar = () => {
 
   let [menu,setMenu] = useState("shop");
@@ -34,10 +34,15 @@ const Navbar = () => {
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')
         ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace("/");}}>Logout</button>
-        :<Link to='/login' style={{ textDecoration: 'none' }}><button>Login</button></Link>}
-        <Link to="/cart"><img src={cart_icon} alt="cart"/></Link>
-        <div className="nav-cart-count">{getTotalCartItems()}</div>
+        :<Link to='/login' style={{ textDecoration: 'none' } }><button>Login</button></Link>}
+        <Link to="/cart"><img src={cart_icon} alt="cart"/ ></Link>
+        <div className="nav-cart-count">{getTotalCartItems()}</div> 
+        
       </div>
+      <div className='nav-profile'>
+      <Link to="/account"><img src={profile_logo} alt="profile"/></Link> 
+      </div>
+       
     </div>
   )
 }

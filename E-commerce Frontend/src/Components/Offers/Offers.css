@@ -10,6 +10,11 @@
     background: linear-gradient(180deg, #fde1ff 0%,#e1ffea22 60%);;
 }
 
+.offers-left{
+    flex: 1;
+    flex-direction: column; 
+}
+
 .offers-left h1{
     color: #171717;
     font-size: 60px;
@@ -32,10 +37,12 @@
     margin-top: 30px;
     cursor: pointer;
 }
-.offers-right img{
+.offers-right{
     width: 320px;
     padding-top: 20px;
+    justify-content: flex-end;
 }
+  
 
 /* ----- media query----- */
 

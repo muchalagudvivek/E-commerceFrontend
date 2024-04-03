@@ -84,6 +84,16 @@
     display: none;
 }
 
+.nav-profile{
+    width: 60px;
+    height: 40px;
+    margin-left: -230px; 
+}
+
+
+
+
+
 /* -------- media query---------- */
 @media(max-width:900px){
     .nav{
@@ -150,3 +160,4 @@
         gap: 10px;
     }
 }
+
