@@ -10,7 +10,7 @@ import { ShopContext } from "../Context/ShopContext";
     const {all_product} = useContext(ShopContext);
 
 
-  /*const [allproducts, setAllProducts] = useState([]); 
+  const [allproducts, setAllProducts] = useState([]); 
   const fetchInfo = () => { 
     fetch('http://localhost:4000/allproducts') 
             .then((res) => res.json()) 
@@ -18,7 +18,7 @@ import { ShopContext } from "../Context/ShopContext";
     } 
     useEffect(() => {
       fetchInfo();
-    }, [])*/
+    }, []) 
     
     
    return (

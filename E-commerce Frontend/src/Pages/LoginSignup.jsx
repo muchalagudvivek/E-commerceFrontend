@@ -11,48 +11,48 @@ const LoginSignup = () => {
 
     const login = async () => {
      let dataObj;
-  //   await fetch('http://localhost:4000/login', {
-  //     method: 'POST',
-  //     headers: {
-  //       Accept:'application/form-data',
-  //       'Content-Type':'application/json',
-  //     },
-  //     body: JSON.stringify(formData),
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then((data) => {dataObj=data});
-  //     console.log(dataObj);
-  //     if (dataObj.success) {
-  //       localStorage.setItem('auth-token',dataObj.token);
-  //       window.location.replace("/");
-  //     }
-  //     else
-  //     {
-  //       alert(dataObj.errors)
-  //     } 
+    await fetch('http://localhost:4000/login', {
+      method: 'POST',
+      headers: {
+        Accept:'application/form-data',
+        'Content-Type':'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {dataObj=data});
+      console.log(dataObj);
+      if (dataObj.success) {
+        localStorage.setItem('auth-token',dataObj.token);
+        window.location.replace("/");
+      }
+      else
+      {
+        alert(dataObj.errors)
+      } 
     }
 
     const signup = async () => {
      let dataObj;
-  //   await fetch('http://localhost:4000/signup', {
-  //     method: 'POST',
-  //     headers: {
-  //       Accept:'application/form-data',
-  //       'Content-Type':'application/json',
-  //     },
-  //     body: JSON.stringify(formData),
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then((data) => {dataObj=data});
+    await fetch('http://localhost:4000/signup', {
+      method: 'POST',
+      headers: {
+        Accept:'application/form-data',
+        'Content-Type':'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {dataObj=data});
 
-  //     if (dataObj.success) {
-  //       localStorage.setItem('auth-token',dataObj.token);
-  //       window.location.replace("/");
-  //     }
-  //     else
-  //     {
-  //       alert(dataObj.errors)
-  //     }
+      if (dataObj.success) {
+        localStorage.setItem('auth-token',dataObj.token);
+        window.location.replace("/");
+      }
+      else
+      {
+        alert(dataObj.errors)
+      }
     }
 
   return (

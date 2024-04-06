@@ -13,11 +13,29 @@ const Footer = () => {
         <p>SHOPPER</p>
       </div>
       <ul className="footer-links">
-        <li>Company</li>
-        <li>Products</li>
-        <li>Offices</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>Company 
+            <li className="footer-li">Fashnear Technologies Private Limited</li>
+            <li className="footer-li">online Clothing Stores</li>
+        </li>
+        <li>Products
+            <li className="footer-li">All types of Products Available</li>
+            <li className="footer-li">Mens,Womens,kids wear</li> 
+        </li>
+        <li>Offices 
+            <li className="footer-li">Bangalore</li>
+            <li className="footer-li">Karnataka</li>
+            <li className="footer-li">India</li>
+        </li>
+        <li>Menu 
+            <li className="footer-li">Home</li>
+            <li className="footer-li">About Us</li>
+            <li className="footer-li">Services</li>  
+        </li>
+        <li>Contact Us
+            <li className="footer-li">Address : Hill Towers,Hyderabad</li>
+            <li className="footer-li">Email : shopper@gmail.com</li>
+            <li className="footer-li">Call : 0123456789</li>  
+        </li>
       </ul>
       <div className="footer-social-icons">
         <div className="footer-icons-container">

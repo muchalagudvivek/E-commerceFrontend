@@ -6,9 +6,9 @@ import NewCollections from '../Components/NewCollections/NewCollections'
 import NewsLetter from '../Components/NewsLetter/NewsLetter'
 
 const Shop = () => { 
-  const [popular, newcollection] = useState([]);
+  //const [popular, newcollection] = useState([]);
 
-   /* const [popular, setPopular] = useState([]);
+    const [popular, setPopular] = useState([]);
     const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
@@ -22,8 +22,7 @@ const Shop = () => {
 
     useEffect(() => {
       fetchInfo();
-    }, [])*/
-
+    }, []) 
 
   return (
     <div>
