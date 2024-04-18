@@ -24,12 +24,14 @@
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    gap: 80px;
+    gap: 110px;
     color: #252525;
-    font-size: 19px;
+    font-size: 23px; 
 }
 .footer-li{
-    font-size: 13px; 
+    font-size: 15px; 
+    padding: 5px;
+    
 }
 .footer-links li{
     cursor: pointer;

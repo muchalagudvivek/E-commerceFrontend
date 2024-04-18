@@ -8,7 +8,8 @@ import ShopCategory from "./Pages/ShopCategory";
 import women_banner from "./Components/Assets/banner_women.png";
 import men_banner from "./Components/Assets/banner_mens.png";
 import kid_banner from "./Components/Assets/banner_kids.png";
-import LoginSignup from "./Pages/LoginSignup";
+import LoginSignup from "./Pages/LoginSignup"; 
+import Checkout from "./Components/Checkout/Checkout";
 
 function App() {
 
@@ -22,15 +23,15 @@ function App() {
           <Route path="/womens" element={<ShopCategory banner={women_banner} category="women" />} />
           <Route path="/kids" element={<ShopCategory banner={kid_banner} category="kid" />} />
           <Route path='/product' element={<Product />}>
-            <Route path=':productId' element={<Product />} />
-          </Route>
+          <Route path=':productId' element={<Product />}/></Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup/>} />
-        </Routes>
-        <Footer />
+          <Route path='/checkout' element={<Checkout />}></Route>
+        </Routes> 
+        <Footer />  
+        
       </BrowserRouter>
     </div>
   );
-}
-
+}  
 export default App;
