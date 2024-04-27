@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
   //const {products} = useContext(ShopContext); 
-  const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+  const { getTotalCartAmount, all_product, cartItems, removeFromCart, getTotalCartItems } = useContext(ShopContext);
 
   const navigate = useNavigate();
   const handleCheckout = () => {
@@ -63,7 +63,7 @@ const CartItems = () => {
             </div>
           </div>
 
-          <Button onClick={handleCheckout}>PROCEED TO CHECKOUT</Button>
+          <Button disabled={getTotalCartItems() <= 0 ? true: false} onClick={handleCheckout}>PROCEED TO CHECKOUT</Button>
 
         </div>
         <div className="cartitems-promocode">

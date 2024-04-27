@@ -60,9 +60,32 @@ const LoginSignup = () => {
       <div className="loginsignup-container">
         <h1>{state}</h1>
         <div className="loginsignup-fields">
-          {state==="Sign Up"?<input type="text" placeholder="Your name" name="username" value={formData.username} onChange={changeHandler}/>:<></>}
-          <input type="email" placeholder="Email address" name="email" value={formData.email} onChange={changeHandler}/>
-          <input type="password" placeholder="Password" name="password" value={formData.password} onChange={changeHandler}/>
+          {state==="Sign Up"?
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value={formData.username} onChange={changeHandler}
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="Your name"
+          /> : <></>}
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={formData.email} onChange={changeHandler}
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="Email address"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={formData.password} 
+            onChange={changeHandler}
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="Password"
+          />
         </div>
 
         <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>

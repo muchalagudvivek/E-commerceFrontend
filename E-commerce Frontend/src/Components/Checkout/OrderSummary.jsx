@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const OrderSummary=()=>{
 
-    const { getTotalCartAmount, all_product, cartItems } = useContext(ShopContext);
+    const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
     
     const navigate = useNavigate();
     const handleOrder = () => {

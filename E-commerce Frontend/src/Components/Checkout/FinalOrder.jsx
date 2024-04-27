@@ -1,11 +1,26 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import AddressCard from "../AddressCard/AddressCard";
 import { ShopContext } from "../../Context/ShopContext";
 import '../CartItems/CartItems.css';
 
 const FinalOrder=()=>{
 
-    const { getTotalCartAmount, all_product, cartItems } = useContext(ShopContext);
+    const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+
+    const [temp_all_product, setTempProduct] = useState(all_product);
+    const [temp_cartItems, setTempCart] = useState({cartItems})
+
+    useEffect(() => {
+        removeCartItems();
+    }, []);
+
+    const removeCartItems = () => {
+        all_product.map((e) =>  {
+            if(cartItems[e.id] > 0){
+                removeFromCart(e.id);
+            }
+        })
+    }
 
     return(
         <div>
@@ -38,8 +53,8 @@ const FinalOrder=()=>{
                         role="list"
                         className="mt-6 divide-y divide-gray-200 border-t border-gray-200 text-sm font-medium text-gray-500"
                     >
-                        {all_product.map((product) => {
-                            if(cartItems[product.id] > 0){
+                        {temp_all_product.map((product) => {
+                            if(temp_cartItems.cartItems[product.id] > 0){
                                 return (
                                     <li key={product.id} className="flex space-x-6 py-6">
                                         <img
