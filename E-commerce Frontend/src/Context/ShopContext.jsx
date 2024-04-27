@@ -34,7 +34,7 @@ const ShopContextProvider = (props)=>{
     })
       .then((resp) => resp.json())
       .then((data) => {setCartItems(data)});
-    } 
+    }
 }, [])
    
   
@@ -56,7 +56,7 @@ const ShopContextProvider = (props)=>{
       .then((data) => {console.log(data)});
     } 
   }
-         
+
   const removeFromCart= (itemId)=>{
     setCartItems((prev) => ({ ...prev, [itemId]:prev[itemId] - 1 }));
     

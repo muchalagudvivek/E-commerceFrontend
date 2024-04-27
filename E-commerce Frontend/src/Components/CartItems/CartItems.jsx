@@ -3,7 +3,6 @@ import "./CartItems.css";
 import cross_icon from "../Assets/cart_cross_icon.png";
 import { ShopContext } from "../../Context/ShopContext";
 import { Button } from "@mui/material";
-import Checkout from "../Checkout/Checkout";
 import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
@@ -12,11 +11,11 @@ const CartItems = () => {
 
   const navigate = useNavigate();
   const handleCheckout = () => {
-    navigate("/checkout?step=2")
+    navigate("/ordersummary")
   }
 
   return (
-    <div className="cartitems">
+  <div className="cartitems">
       <div className="cartitems-format-main">
         <p>Products</p>
         <p>Title</p>
@@ -27,9 +26,9 @@ const CartItems = () => {
       </div>
       <hr />
 
-      {all_product.map((e) => {
+      {all_product.map((e, key) => {
         if (cartItems[e.id] > 0) {
-          return <div>
+          return <div key={key}>
             <div className="cartitems-format-main cartitems-format">
               <img className="cartitems-product-icon" src={e.image} alt="" />
               <p cartitems-product-title>{e.name}</p>
