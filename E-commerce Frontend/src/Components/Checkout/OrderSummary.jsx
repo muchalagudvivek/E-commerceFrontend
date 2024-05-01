@@ -6,12 +6,35 @@ import { useNavigate } from "react-router-dom";
 
 const OrderSummary=()=>{
 
-    const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
+    const { getTotalCartAmount, all_product, cartItems } = useContext(ShopContext);
     
     const navigate = useNavigate();
-    const handleOrder = () => {
-      navigate("/order")
-    }
+    const handleOrder = ()=>{
+        let orderArr = [];
+        let temp;
+        all_product.map((e, key) => {
+            if (cartItems[e.id] > 0) {
+                 temp = [{name: e.name, price: e.new_price, quantity: cartItems[e.id]}];
+                 orderArr.push(temp);
+            }
+        })
+
+        if(localStorage.getItem("auth-token"))
+        {
+          fetch('http://localhost:4000/placeorder', {
+          method: 'POST',
+          headers: {
+            Accept:'application/form-data',
+            'auth-token':`${localStorage.getItem("auth-token")}`,
+            'Content-Type':'application/json',
+          },
+          body: JSON.stringify({"Orders": orderArr}),
+        })
+          .then((resp) => resp.json())
+          .then((data) => {console.log(data)});
+          navigate("/order");
+        } 
+      }
     return(
         <div>
             <div className="p-5 shadow-lg rounded-s-md border">

@@ -7,10 +7,30 @@ const FinalOrder=()=>{
 
     const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
 
-    const [temp_all_product, setTempProduct] = useState(all_product);
-    const [temp_cartItems, setTempCart] = useState({cartItems})
+    const [temp_all_product] = useState(all_product);
+    const [temp_cartItems] = useState({cartItems});
+    const [temp_amount] = useState(getTotalCartAmount());
+    const [orders, setOrders] = useState([]);
+
+    const getOrders = () => {
+        if(localStorage.getItem("auth-token"))
+        { 
+        fetch('http://localhost:4000/getOrders', {
+        method: 'POST',
+        headers: {
+            Accept:'application/form-data',
+            'auth-token':`${localStorage.getItem("auth-token")}`,
+            'Content-Type':'application/json',
+        },
+        body: JSON.stringify(),
+        })
+        .then((resp) => resp.json())
+        .then((data) => {setOrders(data); console.log("=>", data)});
+        }
+    }
 
     useEffect(() => {
+        getOrders();
         removeCartItems();
     }, []);
 
@@ -80,7 +100,7 @@ const FinalOrder=()=>{
                     <dl className="space-y-6 border-t border-gray-200 pt-6 text-sm font-medium text-gray-500">
                         <div className="flex justify-between">
                         <dt>Subtotal</dt>
-                        <dd className="text-gray-900">&#8377; {getTotalCartAmount()}</dd>
+                        <dd className="text-gray-900">&#8377; {temp_amount}</dd>
                         </div>
 
                         <div className="flex justify-between">
@@ -90,7 +110,7 @@ const FinalOrder=()=>{
 
                         <div className="flex items-center justify-between border-t border-gray-200 pt-6 text-gray-900">
                         <dt className="text-base">Total</dt>
-                        <dd className="text-base">&#8377; {getTotalCartAmount()}</dd>
+                        <dd className="text-base">&#8377; {temp_amount}</dd>
                         </div>
                     </dl>
 
